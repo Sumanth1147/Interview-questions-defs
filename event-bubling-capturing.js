@@ -44,7 +44,7 @@
     function () {
       console.log("Parent");
     },
-    true    --------------------// pass true for event capturing
+    true    ------------------------------------// pass true for event capturing
   );
 
   child.addEventListener("click", function () {
@@ -57,7 +57,9 @@
 // Summary of Applications
 // Application	                                     Description
 // Event Delegation	                 Handling events on dynamically generated elements efficiently.
+
 // Event delegation leverages event bubbling.
+
 // You attach an event listener to a parent element, and the event bubbles up from the target element (e.g., a child <li>) to the parent.
 // The parent element handles the event for all its children.
 

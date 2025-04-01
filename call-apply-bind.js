@@ -1,5 +1,5 @@
 // These three methods are essential in JavaScript for manipulating the this keyword within functions.
-// They allow you to dynamically set the value of this to a specific object, providing flexibility in function execution.
+// They allow you to dynamically set the value of "this" to a specific object, providing flexibility in function execution.
 
 // call
 // Invokes a function immediately, setting the this keyword to the specified thisArg.

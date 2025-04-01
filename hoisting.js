@@ -2,7 +2,7 @@
 // Initially when js executes the code, a global execution context is created, it has two phases, 
 // memory allocation phase and code execution phase, intially js allocates memory for variables but 
 // assigns undefined initially, and in case of functions, it will save the complete function,
-// them it starts executing the code, by this time variables are assigned by undefined, 
+// then it starts executing the code, by this time variables are assigned by undefined, 
 // so we can use variables and functions before they are declared,
 // Variable declarations are hoisted, but only the declaration itself, not the assignment, Function declarations are hoisted entirely,
 // 

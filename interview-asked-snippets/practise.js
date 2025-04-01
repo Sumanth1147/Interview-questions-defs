@@ -62,5 +62,12 @@ array.forEach((num, i) => {
 // }, [])
 
 
+// function extractingArgs(...args){
+//     console.log([...args]);
+//     }
+//     extractingArgs(8,9,1);
+
+
+const example =['a', 'b', 'c', 'd']
 
 

@@ -105,10 +105,115 @@
 
 // console.log(isSubset([1,2,3,4,5], [1,4]));
 
-// 6 ------------  Check if an Array is a Subset of Another ---- 2
+// ------------------6 ------------  Check if an Array is a Subset of Another ---- 2
 
-function isSubset (arr1, arr2) {
+// function isSubset (arr1, arr2) {
+//     for(let i = 0; i< arr2.length; i++) {
+//         if(!(arr1.includes(arr2[i]))) return false
+//     }
+//     return true;
+// }
 
+// console.log(isSubset([1,2,3,4,7,8,9], [1,2,3,0]));
+
+// ----------------------------------// 7 Count the Frequency of Elements in an Array       --------------------------- 1
+// function countFrequency(arr) {
+//     let result = {}
+//     for (let i=0; i< arr.length; i++) {
+//         result[arr[i]] = (result[arr[i]] || 0) + 1;
+//     }
+
+//     return result;
+// }
+
+// console.log(countFrequency([1,2,2,3,3,4,4,6,6,5,5,5]));
+
+// ------------------------------// 7 Count the Frequency of Elements in an Array with reduce       --------------------------- 2
+// const countFrequency = (arr) => {
+//     return arr.reduce((acc, val) => {
+//       acc[val] = (acc[val] || 0) + 1;
+//       return acc;
+//     }, {});
+//   };
+//   console.log(countFrequency([1, 2, 2, 3, 3, 3])); // Output: { 1: 1, 2: 2, 3: 3 }
+
+//  ----------------------------------  8   Find the Missing Number in a Sequence ------------------------ 1
+// const findMissing = (arr) => {
+//   const n = arr.length + 1;
+//   const expectedSum = (n * (n + 1)) / 2;
+//   const actualSum = arr.reduce((a, b) => a + b, 0);
+//   return expectedSum - actualSum;
+// };
+// console.log(findMissing([1, 2, 4, 5])); // Output: 3
+
+//  ---------------------  8   Find the Missing Number in a Sequence ------------------------ 1
+
+function findMissing(arr) {
+    let actualSum =0; let currentSum=0;
+    let n = arr.length + 1;
+    for (let i=1; i<= n; i++) {
+        actualSum+=i;
+    }
+
+    for (let i=0; i< arr.length; i++) {
+        currentSum+=arr[i];
+    }
+
+    return actualSum-currentSum;
 }
 
-console.log(isSubset([]));
+console.log(findMissing([1,2,3,5,6]));
+
+//  ---------------------------------------------   9 - Implement a function that returns an updated array with r
+// right rotations on an array of integers a .
+// Example:
+// Given the following array: [2,3,4,5,7]
+// Perform 3 right rotations:
+// First rotation : [7,2,3,4,5] , Second rotation : [5,7,2,3,4] and, Third rotation: [4,5,7,2,3]
+// return [4,5,7,2,3]
+// Answer:
+function rotateRight(arr,rotations){
+if(rotations == 0) return arr;
+for(let i = 0; i < rotations;i++){
+let element = arr.pop();
+arr.unshift(element);
+}
+return arr;
+}
+rotateRight([2, 3, 4, 5, 7], 3); // Return [4,5,7,2,3]
+rotateRight([44, 1, 22, 111], 5); // Returns [111,44,1,22]
+
+
+
+//   -------------------------------------- 9 ----rotate array without inbuilt methods
+
+
+function rotateArray(arr, k) {
+    let n = arr.length;
+    k = k % n; // Handle cases where k > n
+
+    let rotatedArr = new Array(n); // Create a new array of the same size
+
+    // Manually copy elements to rotated positions
+    for (let i = 0; i < n; i++) {
+        let newPosition = (i + k) % n;
+        rotatedArr[newPosition] = arr[i];
+    }
+
+    // Copy rotatedArr values back to the original array
+    for (let i = 0; i < n; i++) {
+        arr[i] = rotatedArr[i];
+    }
+}
+
+// Example Usage:
+let arr = [1, 2, 3, 4, 5];
+let k = 2;
+rotateArray(arr, k);
+console.log(arr); 
+// Output: [4, 5, 1, 2, 3]
+
+
+// find repeated words in a paragraph, remove them
+// sort array of strings in alphabetical order
+

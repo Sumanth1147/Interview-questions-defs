@@ -1,16 +1,25 @@
-// Synthetic Events in React
-// 📌 Definition:
-// Synthetic events in React are wrapper events around the native browser events, providing cross-browser compatibility and a consistent API.
+// Synthetic Events
 
-// 📌 Why Synthetic Events?
+// React event also known as Synthetic event.
+// In the realm of React, a synthetic event is a cross-browser wrapper around the browser's native event.
+// (Cross-browser compatibility is the ability of a website or application to function across different browsers and versions.)
 
-// Ensures consistent behavior across different browsers.
-// Provides a unified event system (React manages event delegation efficiently).
-// Improves performance by using a single event listener at the root instead of multiple listeners.
-// How Synthetic Events Work
-// In React, event handlers receive a SyntheticEvent instead of the native browser event.
+// React synthetic events offer the same properties and methods as plain JavaScript events but with the added benefit.
 
-// ✅ Example:
+// 💡
+// They are essentially JavaScript objects that copy the behavior of native events but provide a consistent interface across different browsers including stopPropagation() and preventDefault().
+
+// JavaScript event:
+// onchange
+// onclick
+// onmouseenter
+// onmouseover
+
+// React Events:
+// onChange
+// onClick
+// onMouseOver
+// onMouseEnter
 
 
 function handleClick(event) {

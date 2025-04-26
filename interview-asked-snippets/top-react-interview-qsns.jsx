@@ -5,11 +5,11 @@
 // Code Snippet:
 
 // jsx
-// import React from 'react';
+import React from 'react';
 
-// function App() {
-//   return <h1>Hello, React!</h1>;
-// }
+function App() {
+  return <h1>Hello, React!</h1>;
+}
 
 // export default App;
 // 2. What are the main features of React?
@@ -26,13 +26,13 @@
 // Code Snippet:
 
 // jsx
-// function App() {
-//   const [count, setCount] = React.useState(0);
+function App() {
+  const [count, setCount] = React.useState(0);
 
-//   return (
-//     <button onClick={() => setCount(count + 1)}>Count: {count}</button>
-//   );
-// }
+  return (
+    <button onClick={() => setCount(count + 1)}>Count: {count}</button>
+  );
+}
 // 4. What are React components?
 // Description:
 // React components are building blocks of a React application. They are either functional or class-based.
@@ -41,17 +41,17 @@
 // Functional:
 
 // jsx
-// function Greeting() {
-//   return <h1>Hello, World!</h1>;
-// }
+function Greeting() {
+  return <h1>Hello, World!</h1>;
+}
 // Class-based:
 
 // jsx
-// class Greeting extends React.Component {
-//   render() {
-//     return <h1>Hello, World!</h1>;
-//   }
-// }
+class Greeting extends React.Component {
+  render() {
+    return <h1>Hello, World!</h1>;
+  }
+}
 // 5. What are React Hooks?
 // Description:
 // Hooks are special functions introduced in React 16.8 to use state and other React features in functional components.

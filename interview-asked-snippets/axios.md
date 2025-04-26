@@ -13,8 +13,7 @@ Instead of using fetch(), Axios provides a cleaner and more readable syntax for 
 Example:
 
 js
-Copy
-Edit
+
 axios.get(url).then((res) => console.log(res.data));
 Handles JSON Automatically
 
@@ -27,8 +26,7 @@ You can modify requests before they are sent or process responses before they re
 Example: Adding an authorization token:
 
 js
-Copy
-Edit
+
 axios.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer your-token`;
   return config;
@@ -40,8 +38,7 @@ Axios provides a built-in way to handle errors with .catch(), making error manag
 Example:
 
 js
-Copy
-Edit
+
 axios.get(url)
   .then(response => console.log(response.data))
   .catch(error => console.error("Error:", error.message));

@@ -1,6 +1,10 @@
 
 // ---------------------------------------reverse an array elements
 
+
+// refer for js interview tricky questions-- https://www.codinn.dev/tricky-javascript/es6789-code-snippets-interview-questions
+
+
 //  1 ---------------------------------------------1
 // const exArray = [1,2,3,4,5]
 

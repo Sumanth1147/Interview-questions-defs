@@ -62,3 +62,4 @@ console.log(window.y); // ❌ undefined (not attached to window)
 // Global Object Property	     Yes (window.varName)	No
 
 // ✅ Use let over var for better block scoping, avoiding hoisting issues, and preventing re-declaration errors. 🚀
+// listen akshay saini js tutorials for other clear js topic explanation

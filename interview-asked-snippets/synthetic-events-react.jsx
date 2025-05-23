@@ -285,10 +285,10 @@ const withLogging = (Component) => (props) => {
 
 
 // 24. Difference between Pass by Value & Pass by Reference
-// Aspect	Pass by Value	Pass by Reference
-// Definition	A copy of the value is passed to a function.	A reference to the original memory location is passed.
-// Data Types	Primitive types (Number, String, Boolean)	Objects (Array, Function, Object)
-// Modification Effect	Changes inside the function do not affect the original value.	Changes inside the function affect the original value.
+// Aspect	                       Pass by Value	                                          Pass by Reference
+// Definition--	A copy of the value is passed to a function.	                        A reference to the original memory location is passed.
+// Data Types--	Primitive types (Number, String, Boolean)                          	Objects (Array, Function, Object)
+// Modification Effect-Changes inside the function do not affect the original value.  	Changes inside the function affect the original value.
 // ✅ Example (Pass by Value)
 
 

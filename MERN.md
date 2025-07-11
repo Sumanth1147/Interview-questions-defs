@@ -15,8 +15,8 @@ Install CORS: If you'll be handling cross-origin requests, install the cors pack
 4. Configure the Express Server:
 Create Server File: Create a file (e.g., server.js or index.js) to configure your Express server. 
 Require Express: const express = require('express'). 
-Create App Instance: const app = express(). 
-Set Port: const port = process.env.PORT || 5000. 
+Create App Instance: const app = express().
+Set Port: const port = process.env.PORT || 5000.
 Middleware (Optional):
 CORS: app.use(cors()). 
 JSON Body Parser: app.use(express.json()). 

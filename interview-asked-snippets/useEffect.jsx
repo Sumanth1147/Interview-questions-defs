@@ -10,6 +10,9 @@
 useEffect(() => {
   console.log('This runs only once, after the first render');
 }, []); // Empty dependency array
+
+
+
 // 2. useEffect(() => { ... })
 // Behavior: This runs after every render of the component, including the first render.
 
@@ -22,6 +25,9 @@ useEffect(() => {
 useEffect(() => {
   console.log('This runs after every render');
 }); // No dependency array
+
+
+
 // 3. useEffect(() => { ... }, [dependency1, dependency2])
 // Behavior: This runs only when the specified dependencies change. It also runs after the first render.
 
@@ -34,6 +40,9 @@ useEffect(() => {
 useEffect(() => {
   console.log('This runs when "dependency1" or "dependency2" changes');
 }, [dependency1, dependency2]); // Dependency array with values
+
+
+
 // 4. Cleanup Function in useEffect
 // Behavior: If you return a function from useEffect, it will act as a cleanup function. This runs before the component unmounts or before the effect runs again (if dependencies change).
 

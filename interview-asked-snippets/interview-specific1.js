@@ -221,3 +221,8 @@ console.log(arr);
 // find repeated words in a paragraph, remove them
 // sort array of strings in alphabetical order
 
+     1    
+    1 2
+   1 2 3
+  1 2 3 4
+ 1 2 3 4 5

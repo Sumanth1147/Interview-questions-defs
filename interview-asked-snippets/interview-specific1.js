@@ -76,7 +76,7 @@
 //     function helper(subArray) {
 //         for(let i=0; i< subArray.length; i++) {
 //             if(Array.isArray(subArray[i])) {
-//             helper(subArray[i])
+//                 helper(subArray[i])
 //             } else {
 //                 result.push(subArray[i])
 //             }
@@ -219,8 +219,64 @@ console.log(arr);
 
 
 // find repeated words in a paragraph, remove them
-// sort array of strings in alphabetical order
 
+// 1. Find repeated words (case-insensitive, ignores punctuation)
+
+function findRepeatedWords(paragraph) {
+  // Normalize: lowercase and strip punctuation (keep apostrophes if desired)
+  const words = paragraph
+    .toLowerCase()
+    .match(/\b[\w']+\b/g) || [];
+
+  const counts = new Map();
+  for (const word of words) {
+    counts.set(word, (counts.get(word) || 0) + 1);
+  }
+
+  // Filter to only repeated ones
+  const repeated = [];
+  for (const [word, count] of counts.entries()) {
+    if (count > 1) {
+      repeated.push({ word, count });
+    }
+  }
+
+  return repeated; // array of { word, count }
+}
+
+// Example:
+const para = "This is a test. This test is only a test.";
+console.log(findRepeatedWords(para));
+// Output: [ { word: 'this', count: 2 }, { word: 'is', count: 2 }, { word: 'a', count: 2 }, { word: 'test', count: 3 } ]
+
+
+// 2. Find and remove repeated words, keeping only the first occurrence (preserves original casing and order)
+
+function removeRepeatedWords(paragraph) {
+  const seen = new Set();
+  // Split keeping words and separators so we can rebuild with original spacing/punctuation
+  return paragraph.replace(/\b[\w']+\b/g, (word) => {
+    const key = word.toLowerCase();
+    if (seen.has(key)) {
+      return ''; // remove repeated occurrence
+    } else {
+      seen.add(key);
+      return word; // keep first
+    }
+  }).replace(/\s{2,}/g, ' ') // collapse extra spaces from removals
+    .trim();
+}
+
+// Example:
+// const para = "This is a test. This test is only a test.";
+console.log(removeRepeatedWords(para));
+// Possible output: "This is a test. only"
+// Note: The removal version strips all subsequent occurrences of any word (case-insensitive). Punctuation adjacent to removed words may leave extra spaces, so we collapse multiple spaces.
+
+
+
+
+// sort array of strings in alphabetical order
      1    
     1 2
    1 2 3

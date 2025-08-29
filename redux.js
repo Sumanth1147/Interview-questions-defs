@@ -28,10 +28,11 @@
 // React components connected to the store re-render with the updated state.
 
 
-
-
-
-
+// key words
+// store -- configureStore,  createSlice, counterSlice
+// counterSlice -- createSlice, reducers, initialState
+// index.js -- Provider, store
+// app.js -- useSelector, useDispatch, dispatch()
 
 
 
@@ -65,26 +66,26 @@
 
 // javascript
 // Copy
-{
-  type: "ADD_TODO",
-  payload: {
-    text: "Learn Redux",
-    id: 1
-  }
-}
+// {
+//   type: "ADD_TODO",
+//   payload: {
+//     text: "Learn Redux",
+//     id: 1
+//   }
+// }
 // Actions are typically created using action creators, which are functions that return action objects:
 
 // javascript
 // Copy
-const addTodo = (text) => {
-  return {
-    type: "ADD_TODO",
-    payload: {
-      text: text,
-      id: Date.now()
-    }
-  };
-};
+// const addTodo = (text) => {
+//   return {
+//     type: "ADD_TODO",
+//     payload: {
+//       text: text,
+//       id: Date.now()
+//     }
+//   };
+// };
 // 3. Reducer
 // A reducer is a pure function that takes the current state and an action, and returns the new state. It decides how the state should change based on the action.
 

@@ -11,7 +11,12 @@
 
 // Memoization in React is a technique used to optimize the performance of function components by caching the results of expensive computations or function calls. It's particularly useful when dealing with computationally intensive or frequently called functions that have the same input values, as it helps avoid redundant calculations and improves the overall efficiency of the application. In React, there are three main techniques for memoization:
 
-// React.memo: A higher-order component used to wrap a purely functional component to prevent re-rendering if the props received in that component never change. React remembers the result of rendering the component based on its props and reuses the previously rendered result if the props haven't changed.   
+// React.memo
+// Purpose: React.memo is a higher-order component (HOC) used to optimize functional components by preventing unnecessary re-renders.
+
+// How it works: It memoizes the entire component, meaning it caches the rendered output of the component and reuses it if the props haven't changed.
+
+// When to use: Use React.memo when you want to prevent a component from re-rendering if its props remain the same.
 
 // useMemo Hook: A hook that memorizes the result of a function call or an expensive computation. It tells React to remember the result and only recalculate it when its dependency array changes. It caches the result and returns it whenever those input values remain the same.
 
@@ -21,8 +26,10 @@
 // These are techniques used to limit the number of times a function or an event handler is invoked, especially for events that fire rapidly and repeatedly (like window.resize, scroll, or input changes).
 
 // Throttling: Ensures that a function is called at a specified interval, preventing it from being executed too frequently. If the function is called multiple times within that interval, only the first invocation is executed, and subsequent invocations are ignored until the interval elapses.
+// analogy: restricting rate of function call's like tap water valve
 
 // Debouncing: Ensures that a function is called only after a certain period of inactivity. It delays the function execution until a pause in the event stream occurs (e.g., the user stops typing). If an event occurs again within the delay period, the timer is reset.
+// analogy: like toggling bulb repeatedly 
 
 // 5. Code Splitting:
 
@@ -46,7 +53,7 @@
 // Optimizing app performance in React is crucial for delivering a smooth user experience. Here are some key strategies to optimize React app performance:
 
 // ------------------------------1. Use React.memo() for Functional Components
-// What it does: React.memo is a higher-order component that memoizes the result of a functional component. It prevents unnecessary re-renders when the component's props haven't changed.y7h
+// What it does: React.memo is a higher-order component that memoizes the result of a functional component. It prevents unnecessary re-renders when the component's props haven't changed.
 
 // When to use: Use it for components that receive the same props frequently but don't need to re-render.
 
@@ -60,10 +67,16 @@ const MyComponent = React.memo(({ prop1, prop2 }) => {
 // ---------------------------------------------------------2. Use useCallback and useMemo Hooks
 // useCallback: Memoizes callback functions to prevent unnecessary re-creations of functions on every render.
 
+// The useCallback hook in React is a performance optimization tool used to memoize callback functions. Its primary purpose is to prevent unnecessary re-renders of child components that receive functions as props.
+// How it works:
+// Memoization:
+// useCallback takes two arguments: a function and a dependency array. It returns a memoized version of the function, meaning it caches the function instance.
+// Referential Equality:
+// In JavaScript, functions are objects. When a parent component re-renders, any inline functions defined within it are recreated, leading to a new function reference. If this new function reference is passed as a prop to a child component, even if the child's props haven't conceptually changed, React might perceive a change due to the new reference and trigger an unnecessary re-render of the child.
 // jsx
 // Copy
 const handleClick = useCallback(() => {
-  console.log('Clicked');
+   fetchResults(item); // debounce or any function
 }, []);
 // useMemo: Memoizes the result of expensive computations to avoid recalculating on every render.
 
@@ -166,6 +179,8 @@ const handleSearch = debounce((query) => {
 useEffect(() => {
   fetchData();
 }, [fetchData]); // Ensure fetchData is memoized with useCallback
+
+
 // 13. Use Web Workers for Heavy Computations
 // Offload heavy computations to Web Workers to avoid blocking the main thread.
 
@@ -178,13 +193,15 @@ worker.postMessage(data);
 worker.onmessage = (event) => {
   console.log(event.data);
 };
-// -------------------------------------------------------------------------------------------------  14. Analyze Bundle Size
+
+
+// -----------------------------------------------------------------------------------------
+// --------  14. Analyze Bundle Size
 // Use tools like Webpack Bundle Analyzer to identify and remove unused code or dependencies.
 
 // Example:
 
-// bash
-// Copy
+
 // npm install --save-dev webpack-bundle-analyzer
 // 15. Server-Side Rendering (SSR) or Static Site Generation (SSG)
 // Use frameworks like Next.js for SSR or SSG to improve performance and SEO.
@@ -196,7 +213,8 @@ worker.onmessage = (event) => {
 export async function getServerSideProps(context) {
   return { props: { data } };
 }
-// ------------------------------------------------------------------------------------------  16. Use PureComponent for Class Components
+// ---------------------------------------------------------------------------
+// ---------------  16. Use PureComponent for Class Components
 // PureComponent automatically implements shouldComponentUpdate with a shallow prop and state comparison.
 
 // Example:
@@ -208,7 +226,8 @@ class MyComponent extends React.PureComponent {
     return <div>{this.props.value}</div>;
   }
 }
-// ---------------------------------------------------------------------------------------------17. Optimize CSS and Animations
+// ----------------------------------------------------------------------------------------
+// -----17. Optimize CSS and Animations
 // Use CSS-in-JS libraries like styled-components or emotion for scoped styles.
 
 // Avoid expensive CSS properties like box-shadow or filter in animations.

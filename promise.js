@@ -80,6 +80,8 @@
 // Handling Errors
 // Errors in Promises can be handled using .catch() or by passing a second function to .then().
 
+
+
 // Example with .catch():
 // javascript
 // Copy
@@ -102,6 +104,8 @@
 //   }
 // );
 // Static Methods of the Promise Object
+
+
 // Promise.resolve():
 
 // Returns a Promise that is resolved with a given value.
@@ -116,6 +120,8 @@
 // javascript
 // Copy
 // Promise.reject("Rejected reason").catch((error) => console.error(error));
+
+
 // Promise.all():
 
 // Takes an array of Promises and returns a single Promise that resolves when all Promises in the array have resolved, or rejects if any Promise is rejected.
@@ -125,6 +131,8 @@
 // Promise.all([promise1, promise2])
 //   .then((results) => console.log(results))
 //   .catch((error) => console.error(error));
+
+
 // Promise.race():
 
 // Returns a Promise that resolves or rejects as soon as one of the Promises in the array resolves or rejects.
@@ -134,6 +142,8 @@
 // Promise.race([promise1, promise2])
 //   .then((result) => console.log(result))
 //   .catch((error) => console.error(error));
+
+
 // Promise.allSettled():
 
 // Returns a Promise that resolves after all Promises in the array have either resolved or rejected, providing an array of results.
@@ -142,8 +152,9 @@
 // Copy
 // Promise.allSettled([promise1, promise2])
 //   .then((results) => console.log(results));
-// Promise.any():
 
+
+// Promise.any():
 // Returns a Promise that resolves as soon as any of the Promises in the array resolves. If all Promises are rejected, it rejects with an aggregate error.
 
 // javascript

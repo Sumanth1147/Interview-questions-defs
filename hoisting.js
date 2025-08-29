@@ -5,6 +5,12 @@
 // then it starts executing the code, by this time variables are assigned by undefined, 
 // so we can use variables and functions before they are declared,
 // Variable declarations are hoisted, but only the declaration itself, not the assignment, Function declarations are hoisted entirely,
+
+// Variable initializations are not hoisted, only variable declarations are
+// hoisted
+
+// To avoid hoisting, you can run javascript in strict mode by using “use
+// strict” on top of the code
 // 
 
 hoistable()

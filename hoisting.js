@@ -9,8 +9,7 @@
 // Variable initializations are not hoisted, only variable declarations are
 // hoisted
 
-// To avoid hoisting, you can run javascript in strict mode by using “use
-// strict” on top of the code
+// To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code
 // 
 
 hoistable()

@@ -29,7 +29,7 @@
 // analogy: restricting rate of function call's like tap water valve
 
 // Debouncing: Ensures that a function is called only after a certain period of inactivity. It delays the function execution until a pause in the event stream occurs (e.g., the user stops typing). If an event occurs again within the delay period, the timer is reset.
-// analogy: like toggling bulb repeatedly 
+// analogy: like toggling bulb repeatedly
 
 // 5. Code Splitting:
 

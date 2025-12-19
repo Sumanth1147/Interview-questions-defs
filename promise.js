@@ -25,29 +25,29 @@
 
 // javascript
 // Copy
-// const myPromise = new Promise((resolve, reject) => {
-//   // Perform an asynchronous operation
-//   const success = true; // Simulate success or failure
+const myPromise = new Promise((resolve, reject) => {
+  // Perform an asynchronous operation
+  const success = true; // Simulate success or failure
 
-//   if (success) {
-//     resolve("Operation succeeded!"); // Fulfill the Promise
-//   } else {
-//     reject("Operation failed!"); // Reject the Promise
-//   }
-// });
+  if (success) {
+    resolve("Operation succeeded!"); // Fulfill the Promise
+  } else {
+    reject("Operation failed!"); // Reject the Promise
+  }
+});
 // Consuming a Promise
 // Once a Promise is created, you can handle its result using .then() for fulfillment and .catch() for rejection.
 
 // Example:
 // javascript
 // Copy
-// myPromise
-//   .then((result) => {
-//     console.log(result); // "Operation succeeded!"
-//   })
-//   .catch((error) => {
-//     console.error(error); // "Operation failed!"
-//   });
+myPromise
+  .then((result) => {
+    console.log(result); // "Operation succeeded!"
+  })
+  .catch((error) => {
+    console.error(error); // "Operation failed!"
+  });
 // Chaining Promises
 // Promises can be chained to perform multiple asynchronous operations sequentially. Each .then() returns a new Promise, allowing you to chain further operations.
 
@@ -66,17 +66,17 @@
 //   });
 // };
 
-// fetchData()
-//   .then((data) => {
-//     console.log(data); // "Data fetched"
-//     return processData(data); // Return a new Promise
-//   })
-//   .then((processedData) => {
-//     console.log(processedData); // "Data fetched and processed"
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+fetchData()
+  .then((data) => {
+    console.log(data); // "Data fetched"
+    return processData(data); // Return a new Promise
+  })
+  .then((processedData) => {
+    console.log(processedData); // "Data fetched and processed"
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 // Handling Errors
 // Errors in Promises can be handled using .catch() or by passing a second function to .then().
 

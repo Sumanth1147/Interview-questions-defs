@@ -36,10 +36,6 @@
 
 
 
-
-
-
-
 // clear answer 
 
 // Redux is a state management library commonly used with React to manage the state of your application in a predictable way. It helps you manage the global state of your app, making it easier to share data between components and handle complex state logic.
@@ -77,15 +73,15 @@
 
 // javascript
 // Copy
-// const addTodo = (text) => {
-//   return {
-//     type: "ADD_TODO",
-//     payload: {
-//       text: text,
-//       id: Date.now()
-//     }
-//   };
-// };
+const addTodo = (text) => {
+  return {
+    type: "ADD_TODO",
+    payload: {
+      text: text,
+      id: Date.now()
+    }
+  };
+};
 // 3. Reducer
 // A reducer is a pure function that takes the current state and an action, and returns the new state. It decides how the state should change based on the action.
 

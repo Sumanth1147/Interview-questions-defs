@@ -8,6 +8,34 @@
 
 // Bubbling Phase: Event travels from the target back to the root.
 
+// ---------------------------------------------------------------------------------------------
+// Event propagation in the Document Object Model (DOM) describes the order in which event handlers are triggered when an event occurs on an element that is nested within other elements. This process involves three phases:
+
+// Capturing Phase:
+// The event starts at the root of the DOM (e.g., window or document) and travels downwards through the ancestor elements until it reaches the target element where the event originated. During this phase, event listeners configured for the capturing phase (by setting the third argument of addEventListener to true) will be executed. This allows parent elements to intercept and potentially handle or modify the event before it reaches its intended target.
+
+// Target Phase:
+// The event reaches the actual element on which the event occurred. Event listeners attached directly to this target element will be executed during this phase.
+
+// Bubbling Phase:
+// After the event reaches the target element, it then "bubbles up" from the target element back towards the root of the DOM, traversing through its parent elements. During this phase, event listeners configured for the bubbling phase (the default behavior when addEventListener's third argument is false or omitted) will be executed. This allows parent elements to react to events that occurred on their child elements.
+
+// Example:
+// Consider a div element inside another div, and both have a click listener. If you click the inner div:
+
+// Capturing: The click event starts at the document, then travels down to the outer div, and then to the inner div. If the outer div had a capturing listener, it would trigger first.
+
+// Target: The event reaches the inner div, and its click listener (if any) triggers.
+// Bubbling: The event then bubbles up from the inner div to the outer div, and then to the document. If the outer div had a bubbling listener, it would trigger during this phase.
+
+// When to use:
+// Capturing:
+// Useful for global event handling, preventing default actions, or implementing event delegation where you want to handle events at a higher level in the DOM before they reach specific child elements.
+
+// Bubbling:
+// The more common and default behavior, typically used for localized event handling on the target element or its immediate ancestors.
+
+// The stopPropagation() method on the event object can be used to stop the event propagation at any phase, preventing further listeners in the capturing or bubbling path from being executed.
 
 // EVENT BUBBLING
 {/* <div>
@@ -84,7 +112,7 @@
 // Dropdown menus or modal dialogs: When implementing dropdown menus or modal dialogs, you might want to close them when a user clicks outside the element. However, if a user clicks on an interactive element within the dropdown or modal, you don't want it to close. By using event.stopPropagation() on clicks within the dropdown/modal, you can prevent those clicks from bubbling up to the document or window object, which would trigger the close behavior. 
 
 // Event capturing
-// Event capturing is the initial phase of event propagation where an event travels down the DOM tree from the root to the target element. While less frequently used than event bubbling, it provides an opportunity to intercept and handle events before they reach the target element, says a Medium article. You enable capturing by setting the third parameter of addEventListener() to true. 
+// Event capturing is the initial phase of event propagation where an event travels down the DOM tree from the root to the target element. While less frequently used than event bubbling, it provides an opportunity to intercept and handle events before they reach the target element, You enable capturing by setting the third parameter of addEventListener() to true. 
 
 // Real-world examples:
 // Capturing clicks outside a custom dropdown menu or modal to close it: If you have a custom dropdown or modal, you might want it to close when a user clicks anywhere outside of it. You can attach an event listener to the document object during the capturing phase (setting useCapture to true) and check if the clicked element is outside the dropdown or modal, says GreatFrontEnd. If it is, you close the dropdown or modal.

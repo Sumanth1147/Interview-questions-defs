@@ -35,6 +35,40 @@
 
 // Code splitting in React is a technique used to split a large JavaScript bundle into smaller, more manageable chunks. This improves performance by loading only the necessary code for a specific part of an application rather than loading the entire bundle upfront. As an application grows, the single JavaScript bundle can become large, leading to slower initial load times. Code splitting allows you to divide this bundle into multiple smaller chunks that can be loaded selectively based on the current needs of your application (e.g., when a user visits a particular page or triggers a specific action).   
 
+
+
+// Application Security Measures (Frontend + General) – Direct Answers
+
+// Use HTTPS everywhere
+
+// Authentication & Authorization (JWT, OAuth)
+
+// Input validation & sanitization
+
+// Prevent XSS (escape HTML, CSP)
+
+// Prevent CSRF (CSRF tokens, SameSite cookies)
+
+// Secure cookies (HttpOnly, Secure)
+
+// Do not store secrets in frontend
+
+// Use environment variables
+
+// Enable Content Security Policy (CSP)
+
+// Protect APIs with rate limiting
+
+// Proper error handling (no sensitive data in errors)
+
+// Regular dependency updates
+
+// Use secure headers (Helmet)
+
+// Role-based access control (RBAC)
+
+
+
 // 6. React Fragments:
 
 // React Fragments allow you to group multiple elements together without adding an additional Dom node. When rendering a list of items or a collection of components, you typically need a parent container element. Using a React Fragment (<> and </>) instead of a regular container element like a div avoids adding an extra node to the Dom, leading to a smaller Dom tree and improved performance.

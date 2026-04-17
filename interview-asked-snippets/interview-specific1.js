@@ -71,36 +71,36 @@
 
 // 4 ----------------------------------------- flatten array  ----- 2
 
-//  function flattenArray(arr) {
-//     const result = []
-//     function helper(subArray) {
-//         for(let i=0; i< subArray.length; i++) {
-//             if(Array.isArray(subArray[i])) {
-//                 helper(subArray[i])
-//             } else {
-//                 result.push(subArray[i])
-//             }
-//         }
+ function flattenArray(arr) {
+    const result = []
+    function helper(subArray) {
+        for(let i=0; i< subArray.length; i++) {
+            if(Array.isArray(subArray[i])) {
+                helper(subArray[i])
+            } else {
+                result.push(subArray[i])
+            }
+        }
         
-//     }
-//     helper(arr)
-//     return result
-// }
+    }
+    helper(arr)
+    return result
+}
 
-// console.log(flattenArray([1, [2, [6, 6]], 7]));
+console.log(flattenArray([1, [2, [6, 6]], 7]));
 
 // 5 ------------------- alternate array --------------------
 
-// function alternate (arr1, arr2) {
-//     let result = []
-//     const maxLength = Math.max(arr1.length, arr2.length)
+function alternate (arr1, arr2) {
+    let result = []
+    const maxLength = Math.max(arr1.length, arr2.length)
 
-//     for (i=0; i<maxLength; i++) {
-//         if( i< arr1.length) result.push(arr1[i])
-//         if( i< arr2.length) result.push(arr2[i])
-//     }
-// return result;
-// }
+    for (i=0; i<maxLength; i++) {
+        if( i< arr1.length) result.push(arr1[i])
+        if( i< arr2.length) result.push(arr2[i])
+    }
+return result;
+}
 
 // console.log(alternate([1,3,4,5,6], [2,3,4]));
 
@@ -111,12 +111,12 @@
 
 // ------------------6 ------------  Check if an Array is a Subset of Another ---- 2
 
-// function isSubset (arr1, arr2) {
-//     for(let i = 0; i< arr2.length; i++) {
-//         if(!(arr1.includes(arr2[i]))) return false
-//     }
-//     return true;
-// }
+function isSubset (arr1, arr2) {
+    for(let i = 0; i< arr2.length; i++) {
+        if(!(arr1.includes(arr2[i]))) return false
+    }
+    return true;
+}
 
 // console.log(isSubset([1,2,3,4,7,8,9], [1,2,3,0]));
 
